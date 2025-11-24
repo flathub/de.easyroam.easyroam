@@ -62,6 +62,7 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
       - install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 ${FLATPAK_ID}.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+      - install -Dm644 ${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       - ln -s ${FLATPAK_DEST}/extra/snap/easyroam_connect_desktop ${FLATPAK_DEST}/bin/easyroam
       - install -Dm755 apply_extra ${FLATPAK_DEST}/bin/apply_extra
     sources:
@@ -83,6 +84,8 @@ modules:
         path: de.easyroam.easyroam.desktop
       - type: file
         path: de.easyroam.easyroam.png
+      - type: file
+        path: de.easyroam.easyroam.svg
       - type: script
         dest-filename: apply_extra
         commands:
