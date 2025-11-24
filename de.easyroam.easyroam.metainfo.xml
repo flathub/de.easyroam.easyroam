@@ -35,11 +35,11 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://dashboard.snapcraft.io/site_media/appmedia/2025/06/easyroam1-1749912666.PNG</image>
+      <image width="1266" height="713">https://dashboard.snapcraft.io/site_media/appmedia/2025/06/easyroam1-1749912666.PNG</image>
       <caption>easyroam desktop login screen</caption>
     </screenshot>
     <screenshot>
-      <image>https://dashboard.snapcraft.io/site_media/appmedia/2025/06/easyroam2-1749912666.PNG</image>
+      <image width="1266" height="713">https://dashboard.snapcraft.io/site_media/appmedia/2025/06/easyroam2-1749912666.PNG</image>
       <caption>easyroam desktop home screen</caption>
     </screenshot>
   </screenshots>
