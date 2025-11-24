@@ -72,6 +72,11 @@ modules:
         url: https://api.snapcraft.io/api/v1/snaps/download/K39hKMJWqabSZF9YQ99cdPULXDsUDyXb_1.snap
         sha256: 886f64607e510d2c418a9263319d6b49f1b229c72789046bf1332c1356e983bb
         size: 38699008
+        x-checker-data:
+          type: snapcraft
+          name: easyroam
+          channel: stable
+          is-main-source: true
       - type: file
         path: de.easyroam.easyroam.metainfo.xml
       - type: file
