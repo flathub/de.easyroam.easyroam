@@ -13,7 +13,6 @@ finish-args:
   - --system-talk-name=org.freedesktop.NetworkManager
 
 modules:
-  - shared-modules/lzo/lzo.json
   - shared-modules/squashfs-tools/squashfs-tools.json
 
   - name: libndp
