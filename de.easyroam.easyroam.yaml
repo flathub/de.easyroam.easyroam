@@ -13,48 +13,72 @@ finish-args:
   - --system-talk-name=org.freedesktop.NetworkManager
 
 modules:
-  - shared-modules/lzo/lzo.json
   - shared-modules/squashfs-tools/squashfs-tools.json
 
   - name: libndp
     buildsystem: autotools
+    cleanup:
+      - /bin
+      - /include
+      - /lib/pkgconfig
+      - /share/man
     sources:
       - type: archive
-        url: http://libndp.org/files/libndp-1.9.tar.gz
-        sha256: a8ab214e01dc3a9b615276905395637f391298c84d77651f0cbf0b1082dd2dd4
+        url: https://github.com/jpirko/libndp/archive/v1.9.tar.gz
+        sha256: e564f5914a6b1b799c3afa64c258824a801c1b79a29e2fe6525b682249c65261
+        x-checker-data:
+          type: anitya
+          project-id: 14944
+          stable-only: true
+          url-template: https://github.com/jpirko/libndp/archive/v$version.tar.gz
+  # https://github.com/flathub/org.gnome.NetworkDisplays/blob/37f11973af1c6335d08bbf78beb737a48ca94f39/files/NetworkManager/NetworkManager.json#L27-L67
   - name: NetworkManager
     buildsystem: meson
     build-options:
       cflags: -ltinfo
       cxxflags: -ltinfo
     config-opts:
-      - -Dlibaudit=no
+      - -Dsystemdsystemunitdir=no
       - -Ddbus_conf_dir=/app/etc/dbus-1/system.d
-      - -Ddnsmasq=/usr/bin/true
-      - -Ddocs=false
-      - -Dintrospection=false
       - -Diptables=/usr/bin/true
-      - -Dlibpsl=false
-      - -Dmodem_manager=false
-      - -Dnm_cloud_setup=false
-      - -Dnmtui=false
-      - -Dnbft=false
-      - -Dovs=false
-      - -Dppp=false
-      - -Dqt=false
-      - -Dselinux=false
+      - -Ddnsmasq=/usr/bin/true
       - -Dsession_tracking=no
-      - -Dsystemdsystemunitdir=/app/lib/systemd/system
-      - -Dudev_dir=/app/lib/udev
+      - -Dselinux=false
       - -Dsystemd_journal=false
-      - -Dtests=no
+      - -Dlibaudit=no
+      - -Dwext=false
+      - -Dwifi=true
+      - -Dppp=false
+      - -Dmodem_manager=false
+      - -Dovs=false
+      - -Dnmcli=false
+      - -Dnmtui=false
+      - -Dintrospection=false
       - -Dvapi=false
+      - -Ddocs=false
+      - -Dtests=no
+      - -Dfirewalld_zone=false
+      - -Dlibpsl=false
+      - -Dqt=false
+      - -Dnm_cloud_setup=false
+      - -Dnbft=false
       - -Dman=false
+    cleanup:
+      - /bin
+      - /etc
+      - /include
+      - /lib/pkgconfig
+      - /libexec
+      - /sbin
+      - /var
     sources:
       - type: git
         url: https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git
-        tag: 1.55.4-dev
-        commit: e570498fbfeb75a7eec896109d3f8c70f4ebf729
+        tag: 1.56.0
+        commit: 56b51b98fbb8627c4c09a483702e18fd8aee7ce1
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\\d.]+)$
 
   - name: easyroam-connect-desktop
     buildsystem: simple
@@ -72,6 +96,11 @@ modules:
         url: https://api.snapcraft.io/api/v1/snaps/download/K39hKMJWqabSZF9YQ99cdPULXDsUDyXb_1.snap
         sha256: 886f64607e510d2c418a9263319d6b49f1b229c72789046bf1332c1356e983bb
         size: 38699008
+        x-checker-data:
+          type: snapcraft
+          name: easyroam
+          channel: stable
+          is-main-source: true
       - type: file
         path: de.easyroam.easyroam.metainfo.xml
       - type: file
