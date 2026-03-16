@@ -74,8 +74,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git
-        tag: 1.56.0
-        commit: 56b51b98fbb8627c4c09a483702e18fd8aee7ce1
+        tag: 1.46.6
+        commit: c6226cde087fb77911749148f50e927f22f78c9c
         x-checker-data:
           type: git
           tag-pattern: ^([\\d.]+)$
