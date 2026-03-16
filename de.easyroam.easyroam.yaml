@@ -61,8 +61,8 @@ modules:
       - -Dlibpsl=false
       - -Dqt=false
       - -Dnm_cloud_setup=false
-      - -Dnbft=false
-      - -Dman=false
+      #- -Dnbft=false
+      #- -Dman=false
     cleanup:
       - /bin
       - /etc
