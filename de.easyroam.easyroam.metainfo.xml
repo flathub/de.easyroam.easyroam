@@ -13,8 +13,6 @@
   <project_license>LicenseRef-proprietary</project_license>
 
   <description>
-    <p>**This is a community package of easyroam and not officially supported by DFN-Verein.**</p>
-
     <p>The easyroam app installs EAP-TLS WiFi profiles for authentication with the eduroam infrastructure. Within the app you can manage your access profiles for all your devices currently using easyroam.</p>
     
     <p>The App only installs the profile for your system to use, it does not actively manage the WiFi connection.</p>
