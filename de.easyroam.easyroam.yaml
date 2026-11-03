@@ -78,7 +78,7 @@ modules:
         commit: c6226cde087fb77911749148f50e927f22f78c9c
         x-checker-data:
           type: git
-          tag-pattern: ^([\\d.]+)$
+          tag-pattern: ^([\d.]+)$
 
   - name: easyroam-connect-desktop
     buildsystem: simple
